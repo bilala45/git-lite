@@ -10,22 +10,21 @@ public class Repository {
   // creates path for .gitlite directory
   static final Path GITLITE_DIR = Paths.get(CWD.toString(), ".gitlite");
 
-  // constructor
-  public Repository() {
-    // create .gitlite directory at path specified by GITLITE_DIR
+  // init command
+  public static void initCommand() {
+    // handles case of existing .gitlite directory
+    if (Files.exists(GITLITE_DIR)) {
+      System.out.println("A Gitlet version-control system already exists in the current directory.");
+      System.exit(0);
+    }
+    // creates .gitlite directory
     try {
       Files.createDirectory(GITLITE_DIR);
     }
     catch(Exception e) {
       System.out.println(e);
     }
-  }
 
-  // init command (should this be static?)
-  public static void initCommand() {
-    // initialize Repository object in cwd
-    // creates the .gitlite directory
-    new Repository();
     // create initial commit
     // set parent of initial commit to null
     new Commit("initial commit", null);

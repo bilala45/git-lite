@@ -1,6 +1,7 @@
 package gitlite;
 
 import java.util.HashMap;
+import java.util.Date;
 
 public class Commit {
 

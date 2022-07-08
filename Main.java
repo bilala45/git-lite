@@ -15,20 +15,33 @@ public class Main {
     String command = args[0];
     switch(command) {
       // call initCommand() from Repository class
-      case "init": Repository.initCommand();
-                   break;
-      case "add": break;
-      case "commit": break;
-      case "rm": break;
-      case "log": break;
-      case "global-log": break;
-      case "find": break;
-      case "status": break;
-      case "checkout": break;
-      case "branch": break;
-      case "rm-branch": break;
-      case "reset": break;
-      case "merge": break;
+      case "init":
+        Repository.initCommand();
+        break;
+      case "add":
+        break;
+      case "commit":
+        break;
+      case "rm":
+        break;
+      case "log":
+        break;
+      case "global-log":
+        break;
+      case "find":
+        break;
+      case "status":
+        break;
+      case "checkout":
+        break;
+      case "branch":
+        break;
+      case "rm-branch":
+        break;
+      case "reset":
+        break;
+      case "merge":
+        break;
       // handles unrecognized commands
       default: System.out.println("No command with that name exists.");
                System.exit(0);
