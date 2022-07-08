@@ -13,6 +13,21 @@ public class Repository {
   // constructor
   public Repository() {
     // create .gitlite directory at path specified by GITLITE_DIR
-    Files.createDirectory(GITLITE_DIR);
+    try {
+      Files.createDirectory(GITLITE_DIR);
+    }
+    catch(Exception e) {
+      System.out.println(e);
+    }
+  }
+
+  // init command (should this be static?)
+  public static void initCommand() {
+    // initialize Repository object in cwd
+    // creates the .gitlite directory
+    new Repository();
+    // create initial commit
+    // set parent of initial commit to null
+    new Commit("initial commit", null);
   }
 }

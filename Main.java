@@ -14,7 +14,9 @@ public class Main {
     // handle commands (including unrecognized commands)
     String command = args[0];
     switch(command) {
-      case "init": break;
+      // call initCommand() from Repository class
+      case "init": Repository.initCommand();
+                   break;
       case "add": break;
       case "commit": break;
       case "rm": break;
