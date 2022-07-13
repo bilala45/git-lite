@@ -3,6 +3,10 @@ package gitlite;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.lang.IllegalArgumentException;
+import java.nio.file.Paths;
+import java.nio.file.Path;
+import java.nio.file.Files;
+import java.io.IOException;
 
 public class Utils {
 
@@ -30,5 +34,13 @@ public class Utils {
       // error handled as IllegalArgumentException to indicate illegal argument to method
       throw new IllegalArgumentException("SHA-1 hash is not supported");
     }
+  }
+
+  // given a file path, returns a byte array of the file's contents
+  public static byte[] fileContentsToBytes(String filePath) {
+    // path to file
+    Path path = Paths.get(filePath);
+    // read file contents to byte array
+    return Files.readAllBytes(path);
   }
 }
