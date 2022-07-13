@@ -37,7 +37,7 @@ public class Utils {
   }
 
   // given a file path, returns a byte array of the file's contents
-  public static byte[] fileContentsToBytes(String filePath) {
+  public static byte[] fileContentsToBytes(String filePath) throws IOException {
     // path to file
     Path path = Paths.get(filePath);
     // read file contents to byte array
