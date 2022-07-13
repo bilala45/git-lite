@@ -43,4 +43,10 @@ public class Utils {
     // read file contents to byte array
     return Files.readAllBytes(path);
   }
+
+  // creates a directory with argument name newDir at specified file path
+  public static void createDirectory(String pathToDir, String newDir) {
+    Path newDirPath = Paths.get(pathToDir, newDir);
+    Files.createDirectory(newDirPath);
+  }
 }
